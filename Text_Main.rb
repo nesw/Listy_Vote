@@ -14,6 +14,15 @@ def set_up
 	$stop = false
 end
 
+def populate_random
+	$cands = 5
+	$voters = 17
+	$candidates = ["Jeremy", "Andrew", "Mark", "Paula", "Bret"]
+	$votes_table = Array.new($voters) {$candidates.shuffle}
+	$magic_num = (($cands / 2).ceil + 1)
+	$stop = false
+	$cand_table = [["Jeremy", 0], ["Andrew", 0], ["Mark", 0], ["Paula", 0], ["Bret", 0]]
+end
 
 # gets the names of all of the candidates and stores it as a string in the table
 def get_candidates
@@ -34,6 +43,7 @@ def get_votes
 end
 
 class counting
+
 	@votes = $votes_table
 	@names = $cand_table
 
@@ -41,7 +51,7 @@ class counting
 		puts "Setting tops"
 		@tops = Array.new
 		$votes_table.each do |x|
-		@tops.push(x[0])
+			@tops.push(x[0])
 		end
 	end
 
@@ -86,7 +96,7 @@ class counting
 
 		@bottom = Array.new
 
-		# sets the candidate(s) with the same index as the lowest number to bottom
+		# sets the candidate with the same index as the lowest number to bottom
 		@names.each do |x|
 			if x[1] == nums.min
 				@bottom.push(x[0])
@@ -125,5 +135,6 @@ end
 
 set_up
 get_candidates
+get_votes
 tops_first
 count_up
