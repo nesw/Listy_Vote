@@ -2,7 +2,7 @@
 def set_up
 	puts "How many candidates are there?"
 	$cands = gets.chomp.to_i
-	$magic_num = ($cands / 2).ceil
+	$magic_num = (($cands / 2).ceil + 1)
 	puts "The magic number is: #{$magic_num}"
 	$cand_table = Array.new($cands) { Array.new(2, 0) }
 
