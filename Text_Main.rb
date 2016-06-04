@@ -34,7 +34,6 @@ def get_votes
 end
 
 class counting
-
 	@votes = $votes_table
 	@names = $cand_table
 
@@ -42,7 +41,7 @@ class counting
 		puts "Setting tops"
 		@tops = Array.new
 		$votes_table.each do |x|
-			@tops.push(x[0])
+		@tops.push(x[0])
 		end
 	end
 
@@ -123,3 +122,8 @@ class counting
 		puts "#{name} is elected!"
 	end
 end
+
+set_up
+get_candidates
+tops_first
+count_up
