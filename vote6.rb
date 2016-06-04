@@ -87,7 +87,7 @@ class counting
 
 		@bottom = Array.new
 
-		# sets the candidate with the same index as the lowest number to bottom
+		# sets the candidate(s) with the same index as the lowest number to bottom
 		@names.each do |x|
 			if x[1] == nums.min
 				@bottom.push(x[0])
